@@ -13,21 +13,10 @@
     </script>
 	<script>
       window.onload = () => {                       navigator.geolocation.getCurrentPosition((position) => {
-        document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
-      });
-     }
-    </script>
-	
-	
-	<script>
-      window.onload = () => {                       navigator.geolocation.getCurrentPosition((position) => {
-		document.querySelector('a-text').setAttribute('value',`lat: ${position.coords.latitude};\nlon: ${position.coords.longitude};\nalt:${position.coords.altitude+1};`)
-      });
-     }
-    </script>
-	
-	<script>
-      window.onload = () => {                       navigator.geolocation.getCurrentPosition((position) => {
+        document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+		
+		document.querySelector('a-text').setAttribute('value',`lat: ${position.coords.latitude}\nlon: ${position.coords.longitude}\nalt:${position.coords.altitude+1}`);
+		
 		document.querySelector('a-camera').setAttribute(simulateLatitude, `${position.coords.latitude}`);
 		document.querySelector('a-camera').setAttribute(simulateLongitude, `${position.coords.longitude}`);
       });
